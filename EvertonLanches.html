@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Everton Lanches</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js"></script>
+</head>
+<body>
+    <img src="everton_lanches-removebg-preview.png" alt="">
+    
+    <form id="pedidoForm">
+        <h2>Formulário de Pedido</h2>
+
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required>
+
+        <label for="item">Item do Menu:</label>
+        <select id="item" name="item" required>
+            <option value="" disabled selected>Selecione um item</option>
+            <option value="X Salada">X Salada 22$</option>
+            <option value="X Egg">X Egg 23$</option>
+            <option value="X Bacon">X Bacon 25$</option>
+            <option value="X Frango Catupiry">X Frango Catupiry 26$</option>
+            <option value="X Tudo">X Tudo 27$</option>
+            <option value="Double Cheddar">Double Cheddar 30$</option>
+            <option value="Chicken Burguer Supremo">Chicken Burguer Supremo 31$</option>
+            <option value="Burguer Costela Bovina">Burguer Costela Bovina 33$</option>
+            <option value="Burguer Goiano">Burguer Goiano 29$</option>
+            <option value="Triplo Cheese">Triplo Cheese 32$</option>
+            <option value="X-Burguer Salada">X-Burguer Salada 24$</option>
+            <option value="X-Burguer">X-Burguer 18$</option>
+            <option value="Combo Double">Combo Double 40$</option>
+            <option value="Combo Triplo">Combo Triplo 42$</option>
+            <option value="Combo X Burguer">Combo X Burguer 30$</option>
+            <option value="Combo X Burguer Salada">Combo X Burguer Salada 32$</option>
+            <option value="Barca Especial">Barca Especial 65$</option>
+            <option value="Porção Batata">Porção Batata 22$</option>
+            <option value="Porção Batata com Cheddar e Bacon">Porção Batata com Cheddar e Bacon 25$</option>
+            <option value="Porção Mista">Porção Mista 45$</option>
+            <option value="Porção Calabresa">Porção Calabresa 20$</option>
+            <option value="Porção Filé Frango">Porção Filé Frango 25$</option>
+            <option value="Agua">Água 2,50$</option>
+            <option value="Dellvale">Dellvale 6$</option>
+            <option value="Fanta Lata">Fanta Lata 5$</option>
+            <option value="Coca Lata">Coca Lata 5$</option>
+            <option value="Coca Zero">Coca Zero 5$</option>
+            <option value="Sprite">Sprite 5$</option>
+            <option value="Brahma Lata">Brahma Lata 4,50$</option>
+            <option value="Skol Lata">Skol Lata 4,50$</option>
+            <option value="Crystal Lata">Crystal Lata 3,50$</option>
+            <option value="Coca 2l">Coca 2l 12$</option>
+            <option value="Poty Guarana">Poty Guarana 8$</option>
+            <option value="Roller">Roller 8$</option>
+            <option value="Sukita">Sukita 8$</option>
+            <option value="Energetico">Energético 10$</option>
+            <option value="H2O Limoneto">H2o Limoneto 6$</option>
+            
+        </select>
+
+        <label for="quantidade">Quantidade:</label>
+        <input type="number" id="quantidade" name="quantidade" min="1" required>
+
+        <label for="obs">Observações:</label>
+        <input type="text" id="obs" name="obs" required>
+
+        <label for="telefone">Telefone:</label>
+        <input type="tel" id="telefone" name="telefone" placeholder="Ex: (99) 99999-9999">
+
+        <button type="button" onclick="adicionarPedido()">Adicionar Pedido</button>
+        <button type="button" onclick="limparTodosCampos()">Limpar Todos os Campos</button>
+       
+        <h3>Total do Pedido: R$ <span id="totalPedido">0.00</span></h3>
+        <h3>Horário do Pedido: <span id="horaPedido"></span></h3>
+
+        <button type="button" onclick="imprimirEtiquetaLista()">Imprimir Lista de Pedidos</button>
+
+        <!-- Nova seção para exibir os pedidos -->
+        <div id="listaPedidos">
+            <h2>Lista de Pedidos</h2>
+            <ul id="pedidoList"></ul>
+        </div>
+    </form>
+</body>
+</html>
